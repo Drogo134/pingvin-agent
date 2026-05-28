@@ -1,0 +1,33 @@
+# Секреты — НИКОГДА не коммитить
+.env
+*.env.local
+
+# Загруженные макеты клиентов
+uploads/
+
+# OpenClaw данные (сессии, память) — на сервере в Docker volume
+.openclaw/
+
+# Node
+node_modules/
+
+# Временные файлы
+*.tmp
+*.log
+logs/
+workspace/.cache/
+**/__pycache__/
+*.pyc
+pm2.config.json
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/settings.json
+.idea/
+Usersdan.openclawworkspace/

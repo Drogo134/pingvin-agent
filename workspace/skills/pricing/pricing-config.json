@@ -1,0 +1,245 @@
+{
+  "_meta": {
+    "company": "РПК ПинГвин, Домодедово",
+    "currency": "RUB",
+    "note": "Все цены ориентировочные. Точная стоимость определяется после получения ТЗ и макетов.",
+    "updated": "2026-05-15"
+  },
+
+  "signs": {
+    "_comment": "Вывески и наружная реклама",
+    "volume_letters_light": {
+      "name": "Объёмные световые буквы",
+      "unit": "руб/см высоты",
+      "price_per_cm_height": 90,
+      "min_price": 3000,
+      "example": "буква высотой 30 см = от 2 700 руб"
+    },
+    "volume_letters_no_light": {
+      "name": "Объёмные несветовые буквы",
+      "unit": "руб/см высоты",
+      "price_per_cm_height": 60,
+      "min_price": 2000
+    },
+    "flat_letters": {
+      "name": "Плоские буквы (ПВХ, акрил, АКП)",
+      "unit": "руб/см высоты",
+      "price_per_cm_height": 25,
+      "min_price": 1000
+    },
+    "panel_bracket_backlit": {
+      "name": "Панель-кронштейн с внутренним подсветом",
+      "unit": "руб/шт от",
+      "price_from": 8500
+    },
+    "panel_bracket_no_light": {
+      "name": "Панель-кронштейн без подсвета",
+      "unit": "руб/шт от",
+      "price_from": 5000
+    },
+    "signboard_tablet": {
+      "name": "Табличка (ПВХ, АКП, акрил)",
+      "unit": "руб от",
+      "price_from": 200
+    }
+  },
+
+  "wide_format": {
+    "_comment": "Широкоформатная печать",
+    "banner": {
+      "name": "Баннер",
+      "unit": "руб/кв.м от",
+      "price_per_m2_from": 650
+    },
+    "wide_format_general": {
+      "name": "Широкоформатная печать (бумага, самоклейка, холст, винил)",
+      "unit": "руб/кв.м от",
+      "price_per_m2_from": 450
+    },
+    "self_adhesive": {
+      "name": "Самоклеящаяся плёнка",
+      "unit": "руб/кв.м от",
+      "price_per_m2_from": 450,
+      "_note": "Входит в широкоформатную печать"
+    },
+    "canvas": {
+      "name": "Холст интерьерный",
+      "unit": "руб/кв.м от",
+      "price_per_m2_from": 450
+    }
+  },
+
+  "polygraphy": {
+    "_comment": "Цифровая полиграфия — цена за тираж 100 шт",
+    "business_card_single": {
+      "name": "Визитка односторонняя (90×50 мм, 4+0)",
+      "price_per_100": 1500,
+      "unit": "100 шт"
+    },
+    "business_card_double": {
+      "name": "Визитка двусторонняя (90×50 мм, 4+4)",
+      "price_per_100": 2100,
+      "unit": "100 шт"
+    },
+    "flyer_a6_single": {
+      "name": "Флаер А6 односторонний (4+0, меловка)",
+      "price_per_100": 2200,
+      "unit": "100 шт"
+    },
+    "flyer_a6_double": {
+      "name": "Флаер А6 двухсторонний (4+4, меловка)",
+      "price_per_100": 2500,
+      "unit": "100 шт"
+    },
+    "flyer_a5_single": {
+      "name": "Флаер А5 односторонний (4+0, меловка)",
+      "price_per_100": 4100,
+      "unit": "100 шт"
+    },
+    "flyer_a5_double": {
+      "name": "Флаер А5 двухсторонний (4+4, меловка)",
+      "price_per_100": 4800,
+      "unit": "100 шт"
+    },
+    "booklet_a4_single": {
+      "name": "Буклет-книжка А4 односторонний (4+0, меловка)",
+      "price_per_100": 8400,
+      "unit": "100 шт"
+    },
+    "booklet_a4_double": {
+      "name": "Буклет-книжка А4 двухсторонний (4+4, меловка)",
+      "price_per_100": 9400,
+      "unit": "100 шт"
+    },
+    "eurobooklet_single": {
+      "name": "Евробуклет с двумя фальцами односторонний (4+0, меловка)",
+      "price_per_100": 8400,
+      "unit": "100 шт"
+    },
+    "eurobooklet_double": {
+      "name": "Евробуклет с двумя фальцами двухсторонний (4+4, меловка)",
+      "price_per_100": 9800,
+      "unit": "100 шт"
+    }
+  },
+
+  "design": {
+    "_comment": "Услуги дизайна — цена за разработку макета",
+    "business_card_design": {
+      "name": "Дизайн визитки",
+      "price_from": 2000
+    },
+    "logo_simple": {
+      "name": "Разработка логотипа (простой)",
+      "price": 10000
+    },
+    "logo_medium": {
+      "name": "Разработка логотипа (средний)",
+      "price": 15000
+    },
+    "logo_complex": {
+      "name": "Разработка логотипа (сложный)",
+      "price": 25000
+    },
+    "logo_vectorize": {
+      "name": "Отрисовка/восстановление логотипа в вектор",
+      "price_from": 2000
+    },
+    "flyer_design": {
+      "name": "Дизайн листовки/флаера",
+      "price_from": 2000
+    },
+    "banner_design": {
+      "name": "Дизайн баннера/вывески",
+      "price_from": 2000
+    },
+    "catalog_cover": {
+      "name": "Каталог/меню — обложка и шаблоны страниц",
+      "price_simple": 2000,
+      "price_medium": 3500,
+      "price_complex": 5000
+    },
+    "catalog_page_layout": {
+      "name": "Верстка одной страницы каталога",
+      "price_simple": 800,
+      "price_medium": 900,
+      "price_complex": 1200
+    },
+    "sign_worktime_design": {
+      "name": "Дизайн вывески «режим работы»",
+      "price_from": 2000
+    },
+    "vehicle_branding_design": {
+      "name": "Дизайн брендирования транспорта",
+      "price_from": 2000
+    },
+    "edit_minor": {
+      "name": "Внесение небольших изменений в готовый макет (адрес, телефон, имя)",
+      "price": 800
+    },
+    "edit_structural": {
+      "name": "Корректировка макета (влияет на композицию)",
+      "price": 500,
+      "first_free": true,
+      "note": "Первая корректировка бесплатно"
+    },
+    "hourly": {
+      "name": "Дизайн и вёрстка в присутствии заказчика",
+      "price_per_hour": 2500
+    },
+    "photo_retouch": {
+      "name": "Ретушь, цветокоррекция, замена фона",
+      "price_from": 2000
+    },
+    "collage": {
+      "name": "Коллажирование и фотомонтаж",
+      "price_simple": 2500,
+      "price_medium": 3000,
+      "price_complex": 3500
+    },
+    "resize": {
+      "name": "Изменение макета под другой формат",
+      "price_simple": 1500,
+      "price_medium": 2000,
+      "price_complex": 2500
+    }
+  },
+
+  "surcharges": {
+    "_comment": "Надбавки",
+    "urgency_same_day": {
+      "name": "Срочность (в течение рабочего дня)",
+      "multiplier": 1.5,
+      "percent": "+50%"
+    },
+    "extra_variant": {
+      "name": "Каждый дополнительный вариант макета",
+      "percent_of_base": 0.25,
+      "label": "+25% от стоимости"
+    }
+  },
+
+  "discounts": {
+    "repeat_client": {
+      "name": "Постоянный клиент",
+      "percent": 0.05,
+      "note": "Уточняется у менеджера"
+    },
+    "bulk_50k": {
+      "name": "Заказ от 50 000 руб",
+      "percent": 0.07
+    },
+    "bulk_100k": {
+      "name": "Заказ от 100 000 руб",
+      "percent": 0.10
+    }
+  },
+
+  "calculation_rules": {
+    "always_add_disclaimer": "Это предварительный расчёт. Точная стоимость определяется после получения макета и подтверждения технических условий.",
+    "no_price_without_params": true,
+    "offer_range_if_partial": true,
+    "handoff_if_no_tariff": true,
+    "never_reveal_margin": true
+  }
+}

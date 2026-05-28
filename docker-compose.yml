@@ -1,0 +1,69 @@
+version: "3.9"
+
+services:
+  openclaw:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pingvin-agent
+    restart: unless-stopped
+    ports:
+      - "18789:18789"
+    environment:
+      # === ОБЯЗАТЕЛЬНЫЕ ===
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      # === СБИС CRM ===
+      - SBIS_AUTH_URL=${SBIS_AUTH_URL:-https://online.sbis.ru/auth/service/}
+      - SBIS_API_URL=${SBIS_API_URL:-https://online.sbis.ru/service/?srv=1}
+      - SBIS_SUPPORT_URL=${SBIS_SUPPORT_URL:-https://online.sbis.ru/page/support-service}
+      - SBIS_APPEAL_REGULATION_NAME=${SBIS_APPEAL_REGULATION_NAME:-Обращение}
+      - SBIS_LOGIN=${SBIS_LOGIN}
+      - SBIS_PASSWORD=${SBIS_PASSWORD}
+      - SBIS_ACCOUNT_NUMBER=${SBIS_ACCOUNT_NUMBER:-}
+      - SBIS_MANAGER_ID=${SBIS_MANAGER_ID:-}
+      - SBIS_ORG_INN=${SBIS_ORG_INN:-}
+      - SBIS_ORG_KPP=${SBIS_ORG_KPP:-}
+      # === МЕНЕДЖЕРЫ (handoff, сводки) — через запятую ===
+      - MANAGER_TELEGRAM_CHAT_IDS=${MANAGER_TELEGRAM_CHAT_IDS}
+      - MANAGER_TELEGRAM_CHAT_ID=${MANAGER_TELEGRAM_CHAT_ID}
+      # === EMAIL ===
+      - EMAIL_IMAP_HOST=${EMAIL_IMAP_HOST:-imap.yandex.ru}
+      - EMAIL_IMAP_PORT=${EMAIL_IMAP_PORT:-993}
+      - EMAIL_IMAP_USER=${EMAIL_IMAP_USER:-${EMAIL_USER}}
+      - EMAIL_IMAP_PASSWORD=${EMAIL_IMAP_PASSWORD:-${EMAIL_PASSWORD}}
+      - EMAIL_USER=${EMAIL_USER}
+      - EMAIL_PASSWORD=${EMAIL_PASSWORD}
+      - EMAIL_IMAP=${EMAIL_IMAP}
+      - EMAIL_SMTP_HOST=${EMAIL_SMTP_HOST:-smtp.mail.ru}
+      - EMAIL_SMTP_PORT=${EMAIL_SMTP_PORT:-465}
+      # === БИЗНЕС ===
+      - BUSINESS_HOURS_START=${BUSINESS_HOURS_START:-9}
+      - BUSINESS_HOURS_END=${BUSINESS_HOURS_END:-18}
+      - BUSINESS_TIMEZONE=${BUSINESS_TIMEZONE:-Europe/Moscow}
+      # === РЕЗЕРВНАЯ LLM ===
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # === TELEGRAM BOT USERNAME (для ссылок в email) ===
+      - TELEGRAM_BOT_USERNAME=${TELEGRAM_BOT_USERNAME}
+    volumes:
+      # Workspace монтируется из проекта (hot-reload при изменении skills)
+      - ./workspace:/app/workspace:ro
+      # Загруженные файлы-макеты сохраняются на хосте
+      - ./uploads:/app/uploads
+      # Данные OpenClaw (сессии, память, cron)
+      - openclaw_data:/root/.openclaw
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:18789/health"]
+      interval: 30s
+      timeout: 10s
+      start_period: 60s
+      retries: 3
+
+volumes:
+  openclaw_data:
+    name: pingvin_openclaw_data
